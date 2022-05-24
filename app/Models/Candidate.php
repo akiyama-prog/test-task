@@ -12,4 +12,12 @@ class Candidate extends Model
     protected $fillable = [
         'first_name', 'last_name', 'email'
     ];
+
+    /**
+     * Get the jobs for the candidate.
+     */
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 }

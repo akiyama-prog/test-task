@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\CandidateSecarvice;
+use App\Services\CandidateService;
 
 class CandidateController extends Controller
 {
@@ -12,5 +12,7 @@ class CandidateController extends Controller
      */
     public function list()
     {
+        $candidates = CandidateService::getAll();
+        return view('candidates_list', compact('candidates'));
     }
 }

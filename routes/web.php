@@ -2,7 +2,7 @@
 
 use App\Models\Candidate;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CandidateController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'CandidateController@list');
+Route::get('/', [CandidateController::class, 'list']);
